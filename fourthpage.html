@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>4</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+        }
+        #randomText {
+            margin-left: 20px;
+            font-size: 1.5rem;
+            color: #ffffff;
+            min-width: 150px; 
+            max-width: none; 
+            height: 100px; 
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; 
+            white-space: nowrap; 
+            text-align: center;
+        }
+        #randomText img {
+            max-width: 100%;
+            max-height: 100%; 
+            object-fit: contain;
+        
+        }
+        img {
+            width: 30px;
+            margin-left: 20px;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .top-right  {
+            position: absolute;
+            color: white; 
+            top: 0px;
+            right: 30px;     }
+    </style>
+</head>
+<body style="background-color: #0b4f1d;">
+    <h2 style="color: #ffffff;">Are you feeling sad? Tap down below and see what happens</h2>
+    <div class="container">
+        <img src="../punanenpallo.png" alt="Click me" id="image">
+        <div id="randomText"></div>
+    </div>
+    <script>
+        const items = [
+            "I love you",
+            "You have the cutest smile in the world",
+            "Are you tired? Because you've been running on my mind the whole day",
+            "Are you a black hole? Because you're so attractive I'm falling for you",
+            "Do you have a map? Because I keep getting lost in your eyes :(",
+            "Are you a tower? Because I want to smash into you",
+            "Thank you for being my everything.",
+            "You are the best part of my day",
+            "Are you a magician? Because whenever I look at you, everyone else disappears.",
+            "Are you a campfire? I dont think so because you are even hotter than that.",
+            `<img src="../joulujuni.png" alt="kissa" style="width: 200px; height: auto;">`
+            
+        ];
+    
+        const image = document.getElementById('image');
+        const randomContent = document.getElementById('randomText');
+    
+        image.addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * items.length);
+            randomContent.innerHTML = items[randomIndex];
+        });
+    </script>
+
+<div class="top-right">
+    <h2 style="color: white;"><a href="../index.html">Home page </a> </h2>  
+    </div> 
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>countup</title>
+
+    <style>
+        body {
+            background-color: #0b4f1d;
+            color: white;
+            text-align: center;
+        }
+        #timer1, #timer2 {
+            font-size: 2em;
+        }
+        .unit {
+            font-size: 0,5em; }
+            
+        
+
+
+        .empty-row {
+            height: 20px;  }
+        
+    </style>
+</head>
+
+<body>
+
+<h1>How long have we been together?</h1>
+
+<div class="empty-row"></div> 
+
+<div id="timer1">
+    <span id="days1">00</span><span class="unit">days</span> :
+    <span id="hours1">00</span><span class="unit">hours</span> :
+    <span id="minutes1">00</span><span class="unit">minutes</span> :
+    <span id="seconds1">00</span><span class="unit">seconds</span>
+</div>
+
+<script>
+    const startTime1 = new Date("2023-10-27T23:00:00Z");
+
+    function updateTime1() {
+        const now = new Date();
+        const elapsed = now - startTime1;
+
+        const seconds = Math.floor(elapsed / 1000);
+        const minutes = Math.floor(seconds / 60);
+        const hours = Math.floor(minutes / 60);
+        const days = Math.floor(hours / 24);
+
+        const displayHours = hours % 24;
+        const displayMinutes = minutes % 60;
+        const displaySeconds = seconds % 60;
+
+        document.getElementById("days1").textContent = pad(days);
+        document.getElementById("hours1").textContent = pad(displayHours);
+        document.getElementById("minutes1").textContent = pad(displayMinutes);
+        document.getElementById("seconds1").textContent = pad(displaySeconds);
+    }
+
+    function pad(val) {
+        return val.toString().padStart(2, '0');
+    }
+
+    setInterval(updateTime1, 1000);
+    updateTime1();
+</script>
+
+
+
+<div class="empty-row"></div>  
+<div class="empty-row"></div>  
+
+<div class="tenor-gif-embed" data-postid="17247942" 
+    data-share-method="host" data-aspect-ratio="1.23077" data-width="100%">
+    <img src="https://media1.tenor.com/m/AJ8mQy9dvyQAAAAd/kitty-love.gif"
+    alt=""mwah style="width:200px;">
+</div>
+   
+
+    
+<div class="empty-row"></div>
+<div class="empty-row"></div>
+
+
+
+<h2>What about days since we started talking?</h2>
+
+<div class="empty-row"></div> 
+
+<div id="timer2">
+    <span id="days2">00</span><span class="unit">days</span> :
+    <span id="hours2">00</span><span class="unit">hours</span> :
+    <span id="minutes2">00</span><span class="unit">minutes</span> :
+    <span id="seconds2">00</span><span class="unit">seconds</span>
+</div>
+
+<script>
+    const startTime2 = new Date("2023-10-20T22:05:00Z");
+
+    function updateTime2() {
+        const now = new Date();
+        const elapsed = now - startTime2;
+
+        const seconds = Math.floor(elapsed / 1000);
+        const minutes = Math.floor(seconds / 60);
+        const hours = Math.floor(minutes / 60);
+        const days = Math.floor(hours / 24);
+
+        const displayHours = hours % 24;
+        const displayMinutes = minutes % 60;
+        const displaySeconds = seconds % 60;
+
+        document.getElementById("days2").textContent = pad(days);
+        document.getElementById("hours2").textContent = pad(displayHours);
+        document.getElementById("minutes2").textContent = pad(displayMinutes);
+        document.getElementById("seconds2").textContent = pad(displaySeconds);
+    }
+
+    setInterval(updateTime2, 1000);
+    updateTime2();
+</script>
+
+</body>
+</html>
